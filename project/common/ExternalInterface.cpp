@@ -31,7 +31,7 @@ static value installedappsextension_canOpenURL (value inputValue) {
 	return alloc_bool(returnValue);
 
 }
-DEFINE_PRIM (installedappsextension_canOpenUrl, 1);
+DEFINE_PRIM (installedappsextension_canOpenURL, 1);
 
 
 
