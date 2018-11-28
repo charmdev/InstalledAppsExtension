@@ -63,7 +63,7 @@ class InstalledAppsExtension {
 	#if (android)
 	private static var installedappsextension_sample_method_jni = JNI.createStaticMethod ("org.haxe.extension.InstalledAppsExtension", "sampleMethod", "(I)I");
 	private static var isPackageInstalledJNI = JNI.createStaticMethod ("org.haxe.extension.InstalledAppsExtension", "isPackageInstalled", "(Ljava/lang/String;)Z");
-	##elseif (ios)
+	#elseif (ios)
 	private static var canOpenURLIOS = Lib.load("installedappsextension", "installedappsextension_canOpenURL", 1);
 	#end
 
