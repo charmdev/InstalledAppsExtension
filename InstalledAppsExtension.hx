@@ -12,30 +12,6 @@ import openfl.utils.JNI;
 
 
 class InstalledAppsExtension {
-	
-	
-	public static function sampleMethod (inputValue:Int):Int {
-
-		#if (android && openfl)
-
-		var resultJNI = installedappsextension_sample_method_jni(inputValue);
-		var resultNative = installedappsextension_sample_method(inputValue);
-
-		if (resultJNI != resultNative) {
-
-			throw "Fuzzy math!";
-
-		}
-
-		return resultNative;
-
-		#else
-
-		return installedappsextension_sample_method(inputValue);
-
-		#end
-
-	}
 
 	public static function isPackageInstalled(packageName:String):Bool {
 
@@ -56,9 +32,6 @@ class InstalledAppsExtension {
 		#end
 
 	}
-	
-	
-	private static var installedappsextension_sample_method = Lib.load ("installedappsextension", "installedappsextension_sample_method", 1);
 
 	#if (android)
 	private static var installedappsextension_sample_method_jni = JNI.createStaticMethod ("org.haxe.extension.InstalledAppsExtension", "sampleMethod", "(I)I");

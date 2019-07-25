@@ -16,15 +16,6 @@
 using namespace installedappsextension;
 
 
-
-static value installedappsextension_sample_method (value inputValue) {
-	
-	int returnValue = SampleMethod(val_int(inputValue));
-	return alloc_int(returnValue);
-	
-}
-DEFINE_PRIM (installedappsextension_sample_method, 1);
-
 static value installedappsextension_canOpenURL (value inputValue) {
 
 	int returnValue = CanOpenURL(safe_val_string(inputValue));

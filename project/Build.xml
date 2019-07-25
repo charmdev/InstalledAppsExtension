@@ -7,8 +7,13 @@
 		<compilerflag value="-Iinclude"/>
 		
 		<file name="common/ExternalInterface.cpp"/>
-		<file name="common/InstalledAppsExtension.cpp"/>
-		
+	</files>
+	
+	<files id="iphone">
+
+		<compilerflag value="-Iinclude"/>
+
+		<file name="common/InstalledAppsExtension.mm"/>
 	</files>
 	
 	<set name="SLIBEXT" value=".lib" if="windows"/>
@@ -22,7 +27,9 @@
 		<outdir name="../ndll/${BINDIR}"/>
 		<ext value=".ndll" if="windows || mac || linux"/>
 		<files id="common"/>
-		
+		<section if="iphone" >
+			<files id="iphone" if="iphone" />
+		</section>
 	</target>
 	
 	<target id="default">
